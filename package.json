@@ -1,0 +1,27 @@
+{
+  "name": "hr-management",
+  "version": "1.0.0",
+  "main": "server_1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server_1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peachemaker/hr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peachemaker/hr/issues"
+  },
+  "homepage": "https://github.com/peachemaker/hr#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
+  }
+}
