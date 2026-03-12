@@ -16,8 +16,6 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD || "Gav!nBels0n",
   port: process.env.DB_PORT || 5432,
 });
-pool.on('connect', () => console.log('✅ Подключен к PostgreSQL'));
-pool.on('error', (err) => console.error('❌ Ошибка БД:', err));
 // Получение списка
 app.get("/api/employees", async (req, res) => {
   try {
