@@ -141,16 +141,26 @@ app.patch("/api/employees/:id/fire", async (req, res) => {
   }
 });
 
-app.get("/api/departments", async (req, res) => {
+app.get('/api/departments', async (req, res) => {
   try {
-    const result = await pool.query(
-      "SELECT id, name FROM departments ORDER BY name"
-    );
+    const result = await pool.query('SELECT id, name FROM departments ORDER BY name');
+    console.log('Отделы API:', result.rows);
     res.json(result.rows);
   } catch (err) {
-    console.error(err);
+    console.error('ОТДЕЛЫ:', err);
     res.status(500).json({ error: err.message });
   }
 });
+
+app.get('/api/positions', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT id, name FROM positions ORDER BY name');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Должности:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 app.listen(3000, () => console.log("http://localhost:3000"));

@@ -18,8 +18,7 @@
           placeholder="Поиск по ФИО..."
           oninput="fetchEmployees()"
         />
-        <select id="filterDept" onchange="fetchEmployees()">
-        </select>
+        <select id="filterDept" onchange="fetchEmployees()"></select>
         <button class="btn-add" onclick="openModal()">+ Новый сотрудник</button>
       </div>
 
@@ -62,9 +61,21 @@
             required
           />
           <input type="text" id="address" placeholder="Адрес" />
-          <input type="text" id="department" placeholder="Отдел" />
-          <input type="text" id="position" placeholder="Должность" />
-          <input type="number" id="salary" placeholder="Зарплата" />
+          <div class="form-row">
+            <select id="department" required>
+              <option value="">Выберите отдел</option>
+            </select>
+            <select id="position" required>
+              <option value="">Выберите должность</option>
+            </select>
+          </div>
+          <input
+            type="number"
+            id="salary"
+            placeholder="Зарплата (руб)"
+            step="1000"
+            min="0"
+          />
           <div class="modal-actions">
             <button type="button" onclick="closeModal()">Отмена</button>
             <button type="submit" class="btn-add">Сохранить</button>
